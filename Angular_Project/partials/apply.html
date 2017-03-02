@@ -1,0 +1,31 @@
+      <link rel="stylesheet" href="../css/form.css">
+      <section class='card register'>
+        <form enctype='application/json' ng-submit='sent()' class="formgroup" name='myform' novalidate>
+          <div class="textintro">
+            <h1>Artist Application</h1>
+            <p>Apply to become an artist</p>
+            <p ng-show='thanks'>{{thanks}}</p>
+            <a href="#!/">Home</a>
+            <fieldset>
+          <input type="text" name="name"  ng-required='true' autofocus ng-model='user.name' placeholder='Name' value="">
+          <p class='error validationerror' ng-show='myform.name.$invalid && myform.name.$touched'>You must fill out this field</p>
+
+          <input type="text" name="reknown"  ng-model='user.reknown' ng-required='true' placeholder='Reknown' value="">
+          <p class='error validationerror' ng-show='myform.reknown.$invalid && myform.reknown.$touched'>You must fill out this field</p>
+
+          <input type="text" name="bio" ng-required='true' placeholder='Bio' ng-model='user.bio' ng-required='true' value="">
+          <p class='error validationerror' ng-show='myform.bio.$invalid && myform.bio.$touched'>You must fill out this field</p>
+
+          <input type="email" name="email" ng-required='true'  ng-model='user.email'   placeholder='Email Address' value="">
+          <p class='error validationerror' ng-show='myform.email.$invalid && myform.email.$touched'>You must fill out this field</p>
+
+          <input type="text" name="phone"  ng-pattern='phoneNumberPattern' ng-required='true' ng-model='user.phone' placeholder='Phone Number' value="">
+          <p class='error validationerror'  ng-show='myform.phone.$invalid && myform.phone.$touched'>You must fill out this field</p>
+
+          <input type="submit" class='input btn' name="submit" value='Submit'/>
+        <input id='cancel' type="reset" name="reset" value="Cancel"/></a>
+
+        </fieldset>
+        </div>
+        </form>
+      </section>

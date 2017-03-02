@@ -1,0 +1,10 @@
+<article class="nextmeeting">
+  <h1>Next Meeting</h1>
+  <h2><%= appdata.meeting.where.name %></h2><br>
+    <img src="<%= appdata.meeting.where.img %>" alt="">
+    <p><%= appdata.meeting.where.address %></p>
+    <p><%= appdata.meeting.date %></p>
+    <p>At <%= appdata.meeting.time %></p>
+    <% include socialmedia.ejs %>
+    
+</article>

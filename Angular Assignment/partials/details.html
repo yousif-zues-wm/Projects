@@ -1,0 +1,18 @@
+<section class='artistinfo'>
+  <div class="artist cf" ng-model='artists'>
+    <div class="info">
+
+    <img ng-src="images/{{ artists[whichItem].shortname }}_tn.jpg" alt="Photo of {{ item.name }}"/>
+    <h1>{{artists[whichItem].name}}</h1>
+      <h2>{{artists[whichItem].reknown}}</h2>
+      <div class="bio">
+      <hr><p>{{artists[whichItem].bio}}</p>
+    </div>
+
+    </div>
+      <a href="index.html"><button type="button" name="button" class='btn btn-left'> Home</button></a>
+      <a href="#!/details/{{prevItem}}"><button type="button" name="button" class='btn btn-right'>&laquo; Back</button></a>
+      <a href="#!/details/{{nextItem}}"><button type="button" name="button" class='btn btn-right'>Forward &raquo;</button></a>
+
+  </div>
+</section>

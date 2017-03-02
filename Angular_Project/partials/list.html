@@ -1,0 +1,29 @@
+<section class='artistpage' >
+<div class="search">
+  <form class="searh formgroup" action="index.html" method="post">
+    <h1>Artist Directory</h1>
+    <label for='search' class='formgroup'>Search:</label>
+    <input placeholder='Search For Artists' autofocus  type="text" name="search" ng-model='query' class='search' value="">
+    <select class="search" name="" ng-model='artistOrder'>
+      <option value="name" selected="true">Name</option>
+      <option value="reknown">Reknown</option>
+    </select>
+    <br><label class= 'formgroup'><input ng-model='direction' type="radio" class='search' name="direction" value="" checked> Ascending</label>
+      <label class='formgroup'><input ng-model='direction' type="radio" class='search' name="direction" style='margin-left:15px;' value="reverse"> Descending</label>
+      <a style='margin-left:25%;' href="#!/apply"><button type="button" class='btn' name="button">Apply</button></a>
+
+  </form>
+</div>
+<ul class="artistlist">
+  <li class="artist cf" ng-animate='animate' ng-repeat="item in artists | filter: query | orderBy: artistOrder : direction">
+    <a href="#!/details/{{artists.indexOf(item)}}">
+    <img ng-src="images/{{ item.shortname }}_tn.jpg" alt="Photo of {{ item.name }}"/>
+    <div class="info">
+      <h2>{{ item.name }}</h2>
+      <h3>{{ item.reknown }}</h3>
+    </div>
+
+  </a>
+  </li>
+</ul>
+</section>

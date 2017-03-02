@@ -1,0 +1,24 @@
+{
+  "name": "Burning Sandles",
+  "version": "1.0.0",
+  "description": "M a g a 2017 ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "authenticator": "^1.1.2",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
+    "express-router": "0.0.1",
+    "mongodb": "^2.2.20",
+    "oauth": "^0.9.14",
+    "query": "^0.2.0",
+    "querystring": "^0.2.0",
+    "twitter": "^1.7.0"
+  }
+}

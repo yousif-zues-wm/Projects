@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Twitter Notes</title>
+    <link rel='stylesheet' href="style.css" />
+  </head>
+  <body>
+    <div id='wrapper'>
+      <a href="/logout">
+        <button type="button">log out</button>
+      </a>
+        <div id='friends-column' class="column">
+          <h1>Your Are Following: </h1>
+            <ul id="friends">
+              <% friends.forEach(function(friend){ %>
+                <li uid="<%= friend.twitter_id %>" class="friend">
+                  <img class="profile-image" src="<%=
+                  friend.profile_image_url %>">
+                  <p>@<%= friend.screen_name %></p>
+                  <p class="location">
+                    <%= friend.location %>
+                  </p>
+                  </li>
+                  <% }); %>
+              </ul>
+        </div>
+        <div id='notes-column' class="column">
+            <h1>Friends Notes</h1>
+            <ul id="notes">
+              <li>
+
+              </li>
+            </ul>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "thenutshack",
+  "version": "1.0.0",
+  "description": "Total Run time of The Entire Ice Age Pentalogy but every syllable is replaced with the entire Toy Story trilogy but every second that the color green is in the frame it is replaced with every video ever uploaded on YouTube but every 10 seconds every episode of the Simpsons plays but every word with a vowel is replaced with the Bee Movie but every time a bee is shown it is replaced with every episode of SpongeBob played backwards 65,548,012,847,023 years. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "authenticator": "^1.1.2",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
+    "express-router": "0.0.1",
+    "mongodb": "^2.2.20",
+    "oauth": "^0.9.14",
+    "query": "^0.2.0",
+    "querystring": "^0.2.0",
+    "twitter": "^1.7.0"
+  }
+}

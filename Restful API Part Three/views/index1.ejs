@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= user.name %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <style media="screen">
+    body{
+      background: url('<%= user.profile_banner_url %>');
+    }
+    .form-control{
+      text-align: center;
+      width: 50%;
+      margin-left: 25%
+    }
+    a::hover{
+      text-decoration: none;
+    }
+    a{
+      text-decoration: none;
+    }
+  </style>
+  <body>
+    <div style='text-align:center' class="jumbotron">
+      <h2>Welcome <%= user.name %> </h2><img class='img img-circle' src="<%= user.profile_image_url %>" alt="">
+      <h2>ID: <%= user.id %></h2>
+      <h2> <%= user.followers_count %> Follower(s)</h2>
+      <h2><%= user.friends_count %> Friend(s)</h2><hr>
+
+
+      <h3>Send a Tweet</h3><br>
+      <form class="form" action="http://localhost:8090/tweet" enctype='application/json' method="post">
+        <input type="textarea" class='form form-control' name="tweet" placeholder='Tweet' value=""><br>
+        <input type="submit" name="submit" value="Tweet" class='btn btn-info'>
+
+      </form>
+    </div>
+    <div class="">
+    <a href="#"><h1><img class='img img-circle' src="<%= user.profile_image_url %>" alt=""> @<%= user.screen_name %></h1></a>
+    <p><%= user.text %></p>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+<h1>Speakers: </h1> <br>
+<% for(var i = 0; i < appdata.speakers.length; i ++) { %>
+  <div class="speakerslist">
+<img class='artistImg' src="/images/speakers/<%= appdata.speakers[i].shortname %>.jpg" alt="">
+  <h3><%= appdata.speakers[i].title %> </h3><p>with <a href='/speakers/<%= appdata.speakers[i].shortname %>'> <%= appdata.speakers[i].name %></p></a>
+    <br><hr>
+<% } %>
+</div>

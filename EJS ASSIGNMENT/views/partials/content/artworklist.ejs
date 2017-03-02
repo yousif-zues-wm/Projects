@@ -1,0 +1,12 @@
+<article class="artworklist">
+  <div class="pixgrid">
+  <h2>Artwork on display</h2><hr>
+<% for(var i = 0;i < appdata.speakers.length; i++){ %>
+      <h2><%= appdata.speakers[i].name %></h2> <br>
+        <% for(var j = 0; j < appdata.speakers[i].artwork.length; j++){ var z = j + 1; %>
+          <img src="/images/artwork/<%= appdata.speakers[i].artwork[j] %>" alt="<%= appdata.speakers[i].name + ' 0' + z   %>">
+          <% } %>
+      <% } %>
+    </div>
+
+</article>

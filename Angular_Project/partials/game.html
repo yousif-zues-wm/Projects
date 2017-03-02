@@ -1,0 +1,167 @@
+
+      <style media="screen">
+      body{
+background-color: black;
+color: lime;
+}
+
+h1{
+z-index: 100;
+background-color: black
+}
+
+div{
+background-color: white;
+z-index: -1;
+}
+
+      </style>
+    <h1 id='playerScore'>0</h1>
+<div id='player' style='width:1%;
+height:25%;
+position: absolute;
+transition: 0.1s;
+margin-top: 250px; margin-left:0px' class="player">
+</div>
+<div  id='player2' style='width:1%;
+height:25%;
+position: absolute;
+left: 98%;
+transition: 0.1s;
+margin-top:250px;' class="player2">
+</div>
+<div style='width:1%;
+height:1%;
+position: absolute;
+margin-left:0%;
+transition: .1s;
+margin-top:250px;'id='ball' class="ball">
+</div>
+  </body>
+  <script  type="text/javascript">
+  var player = document.getElementById('player')
+  var player2 = document.getElementById('player2')
+  var ball = document.getElementById('ball')
+  var playerScoreBoard = document.getElementById('playerScore')
+  var playerY = parseInt(player.style.marginTop)
+  var player2Y = parseInt(player2.style.marginTop)
+  var ballX = parseInt(ball.style.marginLeft)
+  var ballY = parseInt(ball.style.marginTop)
+  var ballPos = 'new'
+  var ballSpeed = 100
+  var playerScore = 0;
+
+setInterval(function(){
+  if (ballPos == 'new') {
+  ballX = parseInt(ballX) + 25 + 'px'
+  ballY = parseInt(ballY) + 25 + 'px'
+  ball.style.marginTop = ballY
+  ball.style.marginLeft = ballX
+}
+if (parseInt(ballY) >= 575 ) {
+  ballPos = 'bottom'
+}
+ if (ballPos == 'bottom' ) {
+  ballX = parseInt(ballX) + 25 + 'px'
+  ballY = parseInt(ballY) - 25 + 'px'
+  ball.style.marginTop = ballY
+  ball.style.marginLeft = ballX
+}
+if (parseInt(ballY) <= -25 ) {
+  ballPos = 'top'
+}
+if (ballPos == 'top' ) {
+ ballX = parseInt(ballX) + 25 + 'px'
+ ballY = parseInt(ballY) + 25 + 'px'
+ ball.style.marginTop = ballY
+ ball.style.marginLeft = ballX
+}
+if (parseInt(ballX) >= 1450 ) {
+  playerScore = playerScore + 1
+  playerScoreBoard.innerHTML = playerScore;
+  reset()
+}
+if (ballPos == 'player2') {
+ ballX = parseInt(ballX) - 25 + 'px'
+ ballY = parseInt(ballY) - 25 + 'px'
+ ball.style.marginTop = ballY
+ ball.style.marginLeft = ballX
+}
+if (parseInt(ballX <= 50)) {
+  ballPos = 'player'
+}
+if (ballPos == 'player') {
+ ballX = parseInt(ballX) - 25 + 'px'
+ ballY = parseInt(ballY) - 25 + 'px'
+ ball.style.marginTop = ballY
+ ball.style.marginLeft = ballX
+}
+if (parseInt(ballY) <= -275) {
+
+}
+}, ballSpeed)
+function reset(){
+  ballX = '500px'
+  ballY = '500px'
+  ball.style.marginLeft = ballX
+  ball.style.marginTop = ballY
+
+
+}
+  document.addEventListener("keydown", function(input){
+    console.log(input.keyCode)
+    if (input.keyCode == 87 && parseInt(player.style.marginTop) <= 0) {
+      playerY = newPLayerYN;
+      console.log(playerY);
+      player.style.marginTop = playerY
+    }
+
+  else if (input.keyCode == 87 && parseInt(player.style.marginTop) >= 0) {
+      newPlayerY = parseInt(playerY ) - 25 + "px";
+      playerY = newPlayerY;
+      player.style.marginTop = playerY
+      console.log(playerY);
+
+    }
+
+    if (input.keyCode == 83 && parseInt(player.style.marginTop) >= 500) {
+      playerY = newPLayerYN;
+      console.log(playerY);
+      player.style.marginTop = playerY
+    }
+
+    else if (input.keyCode == 83) {
+      newPLayerYN = parseInt(playerY) + 25 + "px";
+      playerY = newPLayerYN;
+      console.log(playerY);
+      player.style.marginTop = playerY
+    }
+
+
+    if (input.keyCode == 38 && parseInt(player2.style.marginTop) <= 0) {
+      player2Y = newPLayer2YN;
+      console.log(player2Y);
+      player2.style.marginTop = player2Y
+    }
+    else if (input.keyCode == 38) {
+      newPLayer2YN = parseInt(player2Y) - 25 + "px";
+      player2Y = newPLayer2YN;
+      console.log(player2Y);
+      player2.style.marginTop = player2Y
+    }
+
+    if (input.keyCode == 40 && parseInt(player2.style.marginTop) >= 500) {
+      // newPLayer2YN = parseInt(player2Y) + 25 + "px";
+      player2Y = newPLayer2YN;
+      console.log(player2Y);
+      player2.style.marginTop = player2Y
+    }
+    else if (input.keyCode == 40) {
+      newPLayer2YN = parseInt(player2Y) + 25 + "px";
+      player2Y = newPLayer2YN;
+      console.log(player2Y);
+      player2.style.marginTop = player2Y
+    }
+  })
+</script>
+</html>
